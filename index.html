@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API Access Training</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="orange">
+<p id= "firstWords"><h1>Weather information for Grass Valley, CA USA</h1></p>
+
+<div class="weatherData">
+    
+    <h3>> &nbsp Summary</h3>
+    <span id = Data1 class = tab><p id="summary"> </p>
+    </span>
+
+    
+    <h3>> &nbsp Temperature</h3>
+    <span id = Data2 class = tab><p id="temperature"> Temperature </p>
+    </span>
+    
+    
+    <h3>> &nbsp Barometric Pressure</h3>
+    <span id = Data3 class = tab><p id="pressure"> Pressure </p>
+    </span>
+
+    
+    <h3>> &nbsp Humidity</h3>
+    <span id = Data4 class = tab><p id="humidity"> Humidity </p>
+    </span>  
+
+    
+    <h3>> &nbsp Wind Speed</h3>
+    <span id = Data5 class = tab><p id="windSpeed"> Wind Speed </p>
+    </span>
+
+    
+    <h3>> &nbsp Wind Direction</h3>
+    <span id = Data6 class = tab><p id="windDirection"> Wind Direction </p>
+    </span><br/>
+      
+      <script src="\weather.js"></script>
+      <button class="button" onclick ="updateWeather()" id = "B1">  Click to Update  </button><br/>
+  </div>
+  <br/><br/>
+  <div id="openweathermap-widget-11"></div>
+<script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
+<script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
+ window.myWidgetParam.push({id: 11,cityid: '5353775',appid: 'e81d1f9c935070173af5920db32d27cc',units: 'metric',
+ containerid: 'openweathermap-widget-11',  });
+ (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";
+ script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+ var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();
+ </script>
+</div>
+</body>
+</html>
