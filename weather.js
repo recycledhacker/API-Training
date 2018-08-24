@@ -1,3 +1,4 @@
+//Change for git test
 //Make sure the document is loaded
 document.addEventListener("DOMContentLoaded", updateWeather() );
 function updateWeather() {
