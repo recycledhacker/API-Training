@@ -1,0 +1,29 @@
+{
+  "name": "api-training",
+  "version": "1.0.0",
+  "description": "This is the Javascript weather app.",
+  "main": "weather.js",
+  "dependencies": {
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recycledhacker/API-Training.git"
+  },
+  "keywords": [
+    "weather",
+    "forecast"
+  ],
+  "author": "Gary Schlussler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/recycledhacker/API-Training/issues"
+  },
+  "homepage": "https://github.com/recycledhacker/API-Training#readme"
+}

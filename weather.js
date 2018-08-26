@@ -9,6 +9,8 @@ let key ='e81d1f9c935070173af5920db32d27cc';
 let zip = 95949;
 let lat = 39.131942;
 let lon = -121.100202;
+let fahrenheit = '&units=imperial';
+let celcius = '&units=metric';
 let api = getWeather + 'lat=' + lat +'&lon=' + lon + '&APPID=' + key;
 api = api.concat('&units=imperial');
 console.log(api);
@@ -56,7 +58,7 @@ fetch ('http://api.openweathermap.org/data/2.5/weather?lat=39.131942&lon=-121.10
          if(response.ok) {
          return response.json();
        }else{
-         throw new Error('Bad HTTP!')
+         throw new Error('Bad HTTP!');
        }
      })
     .then( (j) =>{
@@ -69,7 +71,7 @@ fetch ('http://api.openweathermap.org/data/2.5/weather?lat=39.131942&lon=-121.10
     })
     .catch( (err) =>{
       console.log('Error:', err.message);
-    })
+    });
     //if(navigator.geolocation){
       //navigator.geolocation.getCurrentPosition(showPosition);
     //} else {
