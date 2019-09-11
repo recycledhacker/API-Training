@@ -1,6 +1,6 @@
 /* eslint-enable */
 //  Make sure the document is loaded
-document.addEventListener('DOMContentLoaded', updateWeather(false))
+document.addEventListener('DOMContentLoaded', updateWeather(false));
 
 function updateWeather (value) {
   //  Establish the variables for the fetch operation
@@ -13,6 +13,9 @@ function updateWeather (value) {
   let fahrenheit = '&units=imperial'  
   let celcius = '&units=metric'
   let units = fahrenheit
+  let sayTemp = '° F'
+  let saySpeed = ' MPH'
+  
   //  let zip = '95949'
   //  let zipApi = getWeather + zip + '&APPID=' + key
   //  zipApi = zipApi.concat(fahrenheit)
@@ -38,13 +41,13 @@ function updateWeather (value) {
     let low = 360 - range / 2
     let high = (low + range) % 360
     let angles = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
-    //  This may have sreated a problem with wind direction.
+        //  This may have sreated a problem with wind direction.
     let i = 0
-    for (i in angles) {
-      if (deg >= low && deg < high)
-        return angles[i]
-      low = (low + range) % 360
+        for (i in angles) {
+            if (deg >= low && deg < high)
+       low = (low + range) % 360
       high = (high + range) % 360
+      return angles[i];
     }
   }
 
@@ -66,6 +69,8 @@ function updateWeather (value) {
   //  update units function
     if (value === true) {
       units = celcius;
+      sayTemp = '° C';
+      saySpeed = ' KPH';
     } else { 
       units = fahrenheit;
     }
@@ -82,10 +87,10 @@ function updateWeather (value) {
       })
       .then((j) => {
         summary.innerHTML = j.weather[0].main,
-        temperature.innerHTML = (j.main.temp).toFixed(1) + '° F',
+        temperature.innerHTML = (j.main.temp).toFixed(1) + sayTemp,
         pressure.innerHTML = (mbarToInches(j.main.pressure)).toFixed(2) + ' inHg',
         humidity.innerHTML = j.main.humidity + ' %',
-        windSpeed.innerHTML = j.wind.speed + ' MPH',
+        windSpeed.innerHTML = j.wind.speed + saySpeed,
         windDirection.innerHTML = degToDir(j.wind.deg)
       })
       .catch((err) => {
